@@ -1,3 +1,6 @@
+
+
+/* Variables */     
         :root {
             --navy: #1B365D;
             --gold: #C4B454;
@@ -6,12 +9,15 @@
             --sage: #B4C6A6;
         }
 
+/* Reset */
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
+/* Base Styles */
         body {
             font-family: 'Montserrat', sans-serif;
             background-color: var(--cream);
@@ -38,6 +44,15 @@
             width: 100%;
             top: 0;
             z-index: 100;
+            transition: all 0.3s ease;
+        }
+
+        .header-wrapper.scrolled nav {
+            padding: 15px 0;
+        }
+
+        main {
+            padding-top: 130px; /* Combined height of header + nav */
         }
 
         .nav-content {
@@ -116,6 +131,7 @@
             font-family: 'Cormorant Garamond', serif;
             letter-spacing: 1px;
         }
+
 
         /* About Section */
         .about {
@@ -475,3 +491,175 @@
             grid-template-columns: 1fr;
         }
     }
+
+/* Top Header Bar Styles */
+.top-header {
+    background: var(--cream);
+    padding: 8px 0;
+    font-size: 13px;
+    border-bottom: 1px solid rgba(27, 54, 93, 0.1);
+}
+
+.top-header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--navy);
+}
+
+.contact-info {
+    display: flex;
+    gap: 20px;
+}
+
+.contact-info a {
+    color: var(--navy);
+    text-decoration: none;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.contact-info a:hover {
+    color: var(--gold);
+}
+
+.alert-message {
+    background: var(--gold);
+    color: var(--navy);
+    padding: 8px 0;
+    font-weight: 500;
+    font-size: 13px;
+    text-align: center;
+}
+
+.right-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.language-selector {
+    position: relative;
+    cursor: pointer;
+}
+
+.language-selector select {
+    appearance: none;
+    background: transparent;
+    border: none;
+    color: var(--navy);
+    font-size: 13px;
+    padding-right: 15px;
+    cursor: pointer;
+}
+
+.language-selector select:focus {
+    outline: none;
+}
+
+.language-selector::after {
+    content: '▼';
+    font-size: 8px;
+    color: var(--gold);
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+        @media (max-width: 768px) {
+            .top-header-content {
+                flex-direction: row; /* Keep horizontal on mobile */
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .contact-info {
+                display: flex;
+                gap: 15px;
+                font-size: 12px;
+            }
+
+            .right-section {
+                gap: 15px;
+            }
+
+            main {
+                padding-top: 140px; /* Adjusted for mobile layout */
+            }
+        }
+
+        .header-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            z-index: 1000;
+            transform: translateZ(0);
+            will-change: transform;
+        }
+
+        .top-header {
+            background: var(--cream);
+            padding: 8px 0;
+            font-size: 13px;
+            border-bottom: 1px solid rgba(27, 54, 93, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1001;
+            width: 100%;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav {
+            background: var(--navy);
+            padding: 20px 0;
+            width: 100%;
+            position: relative;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        /* Remove margin from hero and add padding to main content */
+        main {
+            padding-top: 130px; /* Combined height of both headers */
+        }
+
+        .hero {
+            margin-top: 0;
+            height: calc(100vh - 130px); /* Adjust for header height */
+        }
+
+        /* Scroll effect classes */
+        .header-wrapper.scrolled .top-header {
+            background: rgba(245, 245, 240, 0.98);
+        }
+
+        .header-wrapper.scrolled nav {
+            padding: 15px 0;
+        }
+
+        /* Mobile styles */
+        @media (max-width: 768px) {
+            .top-header-content {
+                padding: 5px 0;
+            }
+
+            main {
+                padding-top: 140px;
+            }
+
+            .hero {
+                height: calc(100vh - 140px);
+            }
+        }

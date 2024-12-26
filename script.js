@@ -35,3 +35,28 @@ function registerEvent(eventName) {
         document.querySelector('#apply').scrollIntoView({ behavior: 'smooth' });
     }
 }
+
+// JavaScript for language selector 
+
+document.getElementById('language').addEventListener('change', function(e) {
+    // Here you would typically implement language switching functionality
+    alert('Language changed to: ' + e.target.value);
+});
+
+
+// Enhanced scroll behavior
+let lastScroll = 0;
+const headerWrapper = document.querySelector('.header-wrapper');
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    
+    // Add scrolled class when scrolling down
+    if (currentScroll > 10) {
+        headerWrapper.classList.add('scrolled');
+    } else {
+        headerWrapper.classList.remove('scrolled');
+    }
+    
+    lastScroll = currentScroll;
+});
