@@ -315,3 +315,145 @@
                 font-size: 2.5em;
             }
         }
+
+            /* Membership Tiers Section */
+    .tiers {
+        padding: 100px 0;
+        background: white;
+        position: relative;
+    }
+
+    .tiers::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--rose), var(--gold), var(--sage));
+    }
+
+    .tier-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .tier-card {
+        background: var(--cream);
+        padding: 40px;
+        border-radius: 8px;
+        text-align: center;
+        transition: all 0.3s;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .tier-card.featured::before {
+        content: 'Most Popular';
+        position: absolute;
+        top: 20px;
+        right: -35px;
+        background: var(--gold);
+        color: white;
+        padding: 5px 40px;
+        transform: rotate(45deg);
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+
+    .tier-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(27, 54, 93, 0.1);
+    }
+
+    .tier-name {
+        color: var(--navy);
+        font-size: 2em;
+        margin-bottom: 15px;
+    }
+
+    .tier-price {
+        color: var(--gold);
+        font-size: 2.5em;
+        margin-bottom: 20px;
+        font-family: 'Cormorant Garamond', serif;
+    }
+
+    .tier-features {
+        list-style: none;
+        margin-bottom: 30px;
+    }
+
+    .tier-features li {
+        margin-bottom: 10px;
+        color: var(--navy);
+    }
+
+    /* Events Section */
+    .events {
+        padding: 100px 0;
+        background: var(--cream);
+    }
+
+    .event-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .event-card {
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: all 0.3s;
+    }
+
+    .event-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(27, 54, 93, 0.1);
+    }
+
+    .event-image {
+        width: 100%;
+        height: 200px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .event-content {
+        padding: 25px;
+    }
+
+    .event-date {
+        color: var(--gold);
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
+
+    .event-title {
+        color: var(--navy);
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+
+    .event-description {
+        margin-bottom: 20px;
+        font-size: 0.9em;
+        line-height: 1.6;
+    }
+
+    .spots-left {
+        color: var(--rose);
+        font-size: 0.9em;
+        font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+        .tier-cards, .event-cards {
+            grid-template-columns: 1fr;
+        }
+    }
