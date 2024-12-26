@@ -102,7 +102,11 @@
 
         /* Hero Section */
         .hero {
-            height: 120vh;
+            position: relative;
+            width: 100%;
+            height: calc(100vh - 130px);
+            margin-top: 0;
+            padding-top: 130px; /* Height of both headers */
             background: linear-gradient(rgba(27, 54, 93, 0.4), rgba(27, 54, 93, 0.4)),
                         url('img/portrait-diverse-women-together.jpg') center/cover;
             display: flex;
@@ -110,13 +114,15 @@
             text-align: center;
             color: var(--cream);
             margin-bottom: 0;
-            background-position: center;
-            /* transform: translateY(-30px); */
+            min-height: 600px; /* Minimum height to ensure proper display */
+            box-sizing: border-box;
         }
+
 
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
+            transform: translateY(50px);
         }
 
         .hero h1 {
