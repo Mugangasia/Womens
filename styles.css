@@ -71,12 +71,13 @@
         .hero {
             height: 100vh;
             background: linear-gradient(rgba(27, 54, 93, 0.4), rgba(27, 54, 93, 0.4)),
-                        url('/api/placeholder/1200/800') center/cover;
+                        url('img/portrait-diverse-women-together.jpg') center/cover;
             display: flex;
             align-items: center;
             text-align: center;
             color: var(--cream);
             margin-bottom: 0;
+            background-position: center;
         }
 
         .hero-content {
@@ -126,7 +127,7 @@
         .about-image {
             width: 100%;
             height: 600px;
-            background: url('/api/placeholder/600/600') center/cover;
+            background: url('img/Luminous\ Women\ .png') center/cover;
             border-radius: 5px;
             box-shadow: 20px 20px 0 var(--rose);
         }
