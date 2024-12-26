@@ -67,6 +67,24 @@
             color: var(--gold);
         }
 
+        .nav-links .apply-button {
+            background: var(--gold);
+            color: var(--navy);
+            padding: 10px 25px;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: all 0.3s;
+            margin-left: 20px;
+        }
+
+        .nav-links .apply-button:hover {
+            background: var(--cream);
+            color: var(--navy);
+            transform: translateY(-2px);
+        }
+
+
+
         /* Hero Section */
         .hero {
             height: 100vh;
